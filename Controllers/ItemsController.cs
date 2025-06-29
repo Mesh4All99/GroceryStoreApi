@@ -2,6 +2,7 @@
 using GroceryStore.DTO;
 using GroceryStore.Mapper;
 using GroceryStore.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -34,6 +35,7 @@ namespace GroceryStore.Controllers
             return Ok(data.ShowDTOItems());
         }
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<Item>> Post(PostItemDTO model)
         {
             if (model == null)
@@ -52,6 +54,7 @@ namespace GroceryStore.Controllers
             }
         }
         [HttpPut("{id}")]
+        [Authorize]
         public async Task<IActionResult> Put([FromBody]Item model, [FromRoute] int id)
         {
             var Data = await _context.Items.FindAsync(id);
@@ -72,6 +75,7 @@ namespace GroceryStore.Controllers
             return Ok(Data);
         }
         [HttpDelete("{id}")]
+        [Authorize]
         public async Task<IActionResult> Delete(int id)
         {
             var Data = await _context.Items.FindAsync(id);
