@@ -9,6 +9,7 @@ namespace GroceryStore.Mapper
         {
             return new ShowItemsDTO
             {
+                ItemId = model.ItemId,
                 Name = model.Name,
                 ComanyName = model.ComanyName,
                 Price = model.Price,
