@@ -2,7 +2,7 @@
 
 ## Sample Web Api using dotnet asp.net core Web Api Template
 
-the project Has the following
+the project `GroceryStore` Has the following
 1. dummy data Seeded into Database(Pushed / inserted into DB)
 2. Get Http Method for Getting all Grocires
 3. Get Http Method for getting a specific one using id
